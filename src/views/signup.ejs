@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Library </title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="/css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <%for (i=0;i<nav.length;i++){%>
+        <li>
+          <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+        </li>
+        <%}%>
+       
+        <!-- <li>
+          <a href="/login">Login</a>
+        </li>
+       -->
+      </ul>
+      <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Signup
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+			
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  <div class="container" style="width: 40%;">
+  <form  method="POST" action="/signup/add" onsubmit="return validate() && phoneValidate() && passwordChanged() && passwordconfirm()">
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="email" style="color: white;">Email</label>
+        <input type="email" class="form-control" id="email" name="email" onchange="return validate()" placeholder="Email" required>
+        <label id="erremail" style="color: white; font-size: medium;"></label>
+      </div>
+      <div class="form-group col-md-12">
+        <label for="mobile number"style="color: white;">Mobile number</label>
+        <input type="mobile" class="form-control" id="mobile" name="mobile" onchange="return phoneValidate()" placeholder="XXX-XXX-XXXX" required>
+        <label id="errmobile" style="color: white; font-size: medium;"></label>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="Password"style="color: white;">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password" onchange="return passwordChanged()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        <!-- <label id="errpass" style="font-size: medium;"></label> -->
+        <span id="strength">
+             
+        </span>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="password"style="color: white;">Confirm Password</label>
+        <input type="password" class="form-control" id="passwordconf" name="passwordconf" placeholder="Confirm Password" onchange="return passwordconfirm()" required><br>
+        <label  id="errorconfirm" style=" font-size: smaller;"></label>
+      </div>
+    </div>
+    <br>
+    <div class="text-center">
+    <button type="submit" style="width: 50%; color: black; background-color: green;" class="btn btn-primary">Sign-up</button><br><br>
+  </div>
+  </form>                                                      
+</div>                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Validation signup -->
+    <script type= text/javascript>
+      let email = document.getElementById("email");
+      let erremail = document.getElementById("erremail");
+     function validate(){
+    let regexp = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.]{5,7})+\.([A-Za-z]{2,4})$/;
+    if(regexp.test(email.value)){
+        erremail.innerHTML="Email is valid";
+        erremail.style.color="skyblue";
+        return true;
+    }else if(email.value==""){
+        erremail.innerHTML="Cannot be empty!!!";
+        erremail.style.color="yellow";
+        return false;
+    }
+    else{
+        erremail.innerHTML="Email is invalid";
+        erremail.style.color="orange";
+        return false;
+    }
+  }
+    </script>
+    <script type="text/javascript">
+    let mobile=document.getElementById("mobile");
+    let errmobile= document.getElementById("errmobile");
+
+    function phoneValidate(){
+    let reg=/^([5-9]{3})([\-." "])?([0-9]{3})([\-." "])?([0-9]{4})$/
+   
+    if(reg.test(mobile.value)){
+        errmobile.innerHTML="Valid Phone Number";
+        errmobile.style.color="skyblue";
+        return true;
+    }
+    else if(mobile.value==""){
+        errmobile.innerHTML="Cannot be empty!!!";
+        errmobile.style.color="yellow";
+        return false;
+    }
+    else{
+        errmobile.innerHTML="Invalid Phone Number";
+        errmobile.style.color="orange";
+        return false;
+    
+    }
+
+}
+    </script>
+
+      <script language="javascript">
+            function passwordChanged() {
+                var strength = document.getElementById('strength');
+                var strongRegex = new RegExp("^(?=.{8,})|(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+                var mediumRegex = new RegExp("^(?=.{6,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+                var weakRegex = new RegExp("(?=.{4,}).*", "g");
+                var pwd = document.getElementById("password");
+                
+              if (pwd.value.length == 0) {
+                    strength.innerHTML = 'Type Password';
+                    strength.style.color = "blue";
+                    return false;
+              }
+                 else if (false == weakRegex.test(pwd.value)) {
+                    strength.innerHTML = 'More Characters';
+                    strength.style.color = "black";
+                    return false;
+          
+                } 
+                else if (strongRegex.test(pwd.value)) {
+                    strength.innerHTML = '<span style="color:skyblue">Strong!</span>';
+                    return true;
+                    
+                } 
+                else if (mediumRegex.test(pwd.value)) {
+                    strength.innerHTML = '<span style="color:orange">Medium!</span>';
+                   return false;
+                } 
+              else {
+                    strength.innerHTML = '<span style="color:yellow">Weak!</span>';
+                    return false;
+              }
+            }
+          </script>
+          <script type="text/javascript">  
+            function passwordconfirm() {  
+              var password = document.getElementById("password");  
+              var passwordconf = document.getElementById("passwordconf");  
+              var errorconfirm = document.getElementById("errorconfirm");  
+              if(password.value == passwordconf.value)  
+              {   
+                errorconfirm.innerHTML="Password match";  
+                errorconfirm.style.color="skyblue";
+                return true;
+              } else {  
+                errorconfirm.innerHTML="Passwords did not match ";
+                errorconfirm.style.color="orange";
+                return false;
+              }  
+            }  
+            </script>  
+	</body>
+</html>
